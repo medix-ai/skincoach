@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#fafbfa] text-[#1a1a1a] antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Toss Face Font for emojis */
+  .emoji {
+    font-family: 'TossFaceFontMac', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+    font-feature-settings: normal;
+    font-variant-emoji: emoji;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations */
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-25px) rotate(-2deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 0.8; }
+}
+
+@keyframes morphing {
+  0%, 100% { 
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% { 
+    border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatPhone1 {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-20px) rotate(-5deg); }
+}
+
+@keyframes floatPhone2 {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-25px) rotate(0deg); }
+}
+
+@keyframes floatPhone3 {
+  0%, 100% { transform: translateY(0) rotate(5deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+.animate-float1 {
+  animation: float1 6s ease-in-out infinite;
+}
+
+.animate-float2 {
+  animation: float2 7s ease-in-out infinite;
+}
+
+.animate-float3 {
+  animation: float3 8s ease-in-out infinite;
+}
+
+.animate-floatPhone1 {
+  animation: floatPhone1 6s ease-in-out infinite;
+}
+
+.animate-floatPhone2 {
+  animation: floatPhone2 7s ease-in-out infinite;
+}
+
+.animate-floatPhone3 {
+  animation: floatPhone3 8s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 4s infinite;
+}
+
+.animate-pulse-custom {
+  animation: pulse 6s infinite ease-in-out;
+}
+
+.animate-morphing {
+  animation: morphing 8s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 30s linear infinite;
+}
