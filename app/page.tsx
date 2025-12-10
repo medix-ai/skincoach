@@ -1,9 +1,9 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import Features from '@/components/Features'
-import AppPreview from '@/components/AppPreview'
-import CenterHero from '@/components/CenterHero'
-import CTA from '@/components/CTA'
+import ServiceIntro from '@/components/ServiceIntro'
+import RoutineForm from '@/components/RoutineForm'
+import ChallengeCTA from '@/components/ChallengeCTA'
+import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -11,10 +11,10 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <Features />
-      <AppPreview />
-      <CenterHero />
-      <CTA />
+      <ServiceIntro />
+      <RoutineForm />
+      <ChallengeCTA />
+      <FAQ />
       <Footer />
     </main>
   )

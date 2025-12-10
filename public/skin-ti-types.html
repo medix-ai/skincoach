@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스킨코치 스킨-TI 9가지 유형</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #A8E3D1/5);
+            padding: 40px 20px;
+            color: #2F2F2F;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #2F2F2F;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #5a6c57;
+            margin-bottom: 3rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            border: 2px solid #A8E3D1;
+            box-shadow: 0 8px 24px rgba(168, 227, 209, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(168, 227, 209, 0.25);
+        }
+        
+        .emoji {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .type-code {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #84a98c;
+            margin-bottom: 0.5rem;
+        }
+        
+        .type-name {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2F2F2F;
+            margin-bottom: 1rem;
+        }
+        
+        .description {
+            text-align: center;
+            color: #5a6c57;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #5a6c57;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>스킨코치 스킨-TI</h1>
+        <p class="subtitle">나의 스킨케어 MBTI를 알아보세요</p>
+        
+        <div class="grid">
+            <!-- R-EX 루틴 챌린저형 -->
+            <div class="card">
+                <span class="emoji">🚀</span>
+                <div class="type-code">R-EX</div>
+                <div class="type-name">루틴 챌린저형</div>
+                <p class="description">
+                    새로운 제품과 루틴을 시도하는 것을 좋아하는 모험가.<br>
+                    트렌드를 빠르게 따라가며 다양한 스킨케어를 경험하고 싶어합니다.
+                </p>
+            </div>
+            
+            <!-- M-IN 미니멀 스킨케어형 -->
+            <div class="card">
+                <span class="emoji">✨</span>
+                <div class="type-code">M-IN</div>
+                <div class="type-name">미니멀 스킨케어형</div>
+                <p class="description">
+                    간단하고 효과적인 최소한의 루틴을 선호.<br>
+                    불필요한 단계 없이 핵심만 챙기는 효율적인 스킨케어를 추구합니다.
+                </p>
+            </div>
+            
+            <!-- S-CA 민감 안정형 -->
+            <div class="card">
+                <span class="emoji">🛡️</span>
+                <div class="type-code">S-CA</div>
+                <div class="type-name">민감 안정형</div>
+                <p class="description">
+                    피부 안정화를 최우선으로 생각하는 신중한 타입.<br>
+                    저자극 제품을 선택하고 성분을 꼼꼼히 확인합니다.
+                </p>
+            </div>
+            
+            <!-- T-WR 트러블 파이터형 -->
+            <div class="card">
+                <span class="emoji">⚔️</span>
+                <div class="type-code">T-WR</div>
+                <div class="type-name">트러블 파이터형</div>
+                <p class="description">
+                    여드름과 트러블 해결에 집중하는 전투형.<br>
+                    각질 관리와 진정 제품을 적극적으로 활용합니다.
+                </p>
+            </div>
+            
+            <!-- H-LO 수분 집착형 -->
+            <div class="card">
+                <span class="emoji">💧</span>
+                <div class="type-code">H-LO</div>
+                <div class="type-name">수분 집착형</div>
+                <p class="description">
+                    수분 공급에 특별히 신경 쓰는 타입.<br>
+                    히알루론산, 세라마이드 등 보습 성분을 사랑합니다.
+                </p>
+            </div>
+            
+            <!-- F-UL 화려한 루틴형 -->
+            <div class="card">
+                <span class="emoji">💎</span>
+                <div class="type-code">F-UL</div>
+                <div class="type-name">화려한 루틴형</div>
+                <p class="description">
+                    다양한 제품과 단계를 즐기는 화려한 루틴 선호.<br>
+                    여러 단계의 스킨케어를 통해 케어의 즐거움을 느낍니다.
+                </p>
+            </div>
+            
+            <!-- L-IF 방치형 -->
+            <div class="card">
+                <span class="emoji">🌿</span>
+                <div class="type-code">L-IF</div>
+                <div class="type-name">방치형</div>
+                <p class="description">
+                    간단하게 관리하고 싶은 편안한 타입.<br>
+                    최소한의 제품으로 자연스러운 피부 관리를 선호합니다.
+                </p>
+            </div>
+            
+            <!-- C-OB 성분 집착형 -->
+            <div class="card">
+                <span class="emoji">🔬</span>
+                <div class="type-code">C-OB</div>
+                <div class="type-name">성분 집착형</div>
+                <p class="description">
+                    성분 분석과 과학적 접근을 중시하는 타입.<br>
+                    INCI 성분표를 꼼꼼히 확인하고 연구하는 것을 좋아합니다.
+                </p>
+            </div>
+            
+            <!-- A-GE 안티에이징 집중형 -->
+            <div class="card">
+                <span class="emoji">🌟</span>
+                <div class="type-code">A-GE</div>
+                <div class="type-name">안티에이징 집중형</div>
+                <p class="description">
+                    주름과 탄력 개선에 집중하는 타입.<br>
+                    레티놀, 펩타이드, 콜라겐 등 노화 방지 성분을 적극 활용합니다.
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 SkinCoach. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">나의 스킨-TI를 알아보려면 <a href="/#routine-form" style="color: #84a98c; text-decoration: underline;">루틴 리포트 만들기</a></p>
+        </div>
+    </div>
+</body>
+</html>
