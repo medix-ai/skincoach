@@ -2,6 +2,8 @@
 
 import Image from 'next/image'
 
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center px-6 md:px-16 pt-32 pb-20 overflow-hidden bg-white">
@@ -53,7 +55,7 @@ export default function Hero() {
               {/* Fragment 1 */}
               <div className="relative rounded-xl overflow-hidden shadow-md border border-[#A8E3D1]/20 min-h-[200px]">
                 <Image
-                  src="/image/main1.jpg"
+                  src={`${prefix}/image/main1.jpg`}
                   alt="Molecular structure"
                   fill
                   className="object-cover opacity-80 hover:opacity-100 transition-opacity"
@@ -63,7 +65,7 @@ export default function Hero() {
               {/* Fragment 2 */}
               <div className="relative rounded-xl overflow-hidden shadow-md border border-[#A8E3D1]/20 min-h-[200px]">
                 <Image
-                  src="/image/main3.jpg"
+                  src={`${prefix}/image/main3.jpg`}
                   alt="Skincare application"
                   fill
                   className="object-cover opacity-80 hover:opacity-100 transition-opacity"
@@ -73,7 +75,7 @@ export default function Hero() {
               {/* Fragment 3 */}
               <div className="relative rounded-xl overflow-hidden shadow-md border border-[#A8E3D1]/20 min-h-[200px]">
                 <Image
-                  src="/image/main4.jpg"
+                  src={`${prefix}/image/main4.jpg`}
                   alt="Skincare products"
                   fill
                   className="object-cover opacity-80 hover:opacity-100 transition-opacity"
@@ -89,7 +91,7 @@ export default function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#A8E3D1]/20">
               <div className="aspect-[4/3] relative">
                 <Image
-                  src="/image/main2.jpg"
+                  src={`${prefix}/image/main2.jpg`}
                   alt="SkinCoach skincare routine"
                   fill
                   className="object-cover"

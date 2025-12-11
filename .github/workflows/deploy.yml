@@ -31,7 +31,9 @@ jobs:
         run: npm ci
       
       - name: Build
-        run: npm run build
+        run: |
+          export NODE_ENV=production
+          npm run build
         env:
           NODE_ENV: production
       
