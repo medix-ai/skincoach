@@ -63,32 +63,33 @@ export default function AppPreview() {
         </div>
 
         {/* App Screens Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {appScreens.map((screen, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-3xl p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#A8E3D1]/20 hover:-translate-y-2"
+              className="group relative bg-white rounded-3xl p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#A8E3D1]/20 hover:-translate-y-2 flex flex-col"
             >
               {/* Mobile Frame */}
-              <div className="relative aspect-[9/19.5] rounded-[2rem] overflow-hidden bg-[#1a1a1a] shadow-2xl">
+              <div className="relative w-full aspect-[9/19.5] rounded-[2rem] overflow-hidden bg-[#1a1a1a] shadow-2xl flex-shrink-0">
                 {/* Phone Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#1a1a1a] rounded-b-2xl z-10"></div>
                 
                 {/* Screen Content */}
-                <div className="relative w-full h-full overflow-hidden">
+                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
                   <Image
                     src={`${prefix ? prefix : ''}/image/${screen.image}`}
                     alt={screen.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-contain group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     unoptimized
+                    priority={index < 4}
                   />
                 </div>
               </div>
 
               {/* Screen Info */}
-              <div className="mt-4 text-center">
+              <div className="mt-4 text-center flex-grow flex flex-col justify-center">
                 <h3 className="text-lg font-bold text-[#2F2F2F] mb-2">
                   {screen.name}
                 </h3>
