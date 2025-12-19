@@ -4,7 +4,8 @@ const basePath = isProd ? '/skincoach' : ''
 
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
+  // output: 'export'는 빌드 시에만 필요하므로 개발 환경에서는 제거
+  ...(isProd && { output: 'export' }),
   basePath: basePath,
   assetPrefix: basePath,
   env: {
