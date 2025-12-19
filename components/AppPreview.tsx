@@ -77,11 +77,12 @@ export default function AppPreview() {
                 {/* Screen Content */}
                 <div className="relative w-full h-full overflow-hidden">
                   <Image
-                    src={`${prefix}/image/${screen.image}`}
+                    src={`${prefix ? prefix : ''}/image/${screen.image}`}
                     alt={screen.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 50vw, 25vw"
+                    unoptimized
                   />
                 </div>
               </div>
