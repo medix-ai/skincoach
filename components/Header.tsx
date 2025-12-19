@@ -14,9 +14,6 @@ export default function Header() {
           <a href="#service" className="text-[15px] font-medium text-[#5a6c57] hover:text-[#84a98c] transition-colors">
             서비스 소개
           </a>
-          <a href="#app-preview" className="text-[15px] font-medium text-[#5a6c57] hover:text-[#84a98c] transition-colors">
-            앱 미리보기
-          </a>
           <a href="#routine-form" className="text-[15px] font-medium text-[#5a6c57] hover:text-[#84a98c] transition-colors">
             무료 리포트
           </a>
