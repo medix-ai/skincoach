@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import ServiceIntro from '@/components/ServiceIntro'
+import AppPreview from '@/components/AppPreview'
 import RoutineForm from '@/components/RoutineForm'
 import ChallengeCTA from '@/components/ChallengeCTA'
 import FAQ from '@/components/FAQ'
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <Hero />
       <ServiceIntro />
+      <AppPreview />
       <RoutineForm />
       <ChallengeCTA />
       <FAQ />
