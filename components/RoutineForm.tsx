@@ -2,28 +2,13 @@
 
 import { useState } from 'react'
 import ReportResult from './ReportResult'
+import { products as allProducts } from '@/lib/products'
 
 const skinTypes = ['건성', '지성', '복합성', '민감성']
 const skinConcerns = ['여드름', '모공', '잡티', '홍조', '건조/각질', '주름/탄력 저하']
 
-// 샘플 제품 DB (실제로는 백엔드에서 가져옴)
-const sampleProducts = [
-  '라운드랩 1025 독도 토너',
-  '토리든 다이브인 세럼',
-  '라로슈포제 시카플라스트 B5',
-  '구달 청귤 비타C 세럼',
-  '닥터지 레드 블레미쉬 클리어 수딩 토너',
-  '에스네이처 히알루론산 세럼',
-  '일리윤 세라마이드 아토 크림',
-  '라네즈 워터뱅크 하이드로 크림',
-  '비플레인 그린 티 토너',
-  '더오디너리 나이아신아마이드 10%',
-  '더오디너리 레티놀 0.5%',
-  '코스알엑스 AHA/BHA 클리어링 토너',
-  '닥터지 블랙 스네일 크림',
-  '토리든 다이브인 로션',
-  '라로슈포제 안뗄리오스 UVmune 400',
-]
+// 전체 제품 목록 (150개 이상)
+const sampleProducts = allProducts
 
 export default function RoutineForm() {
   const [step, setStep] = useState(1)
@@ -46,7 +31,7 @@ export default function RoutineForm() {
   }
 
   const addProduct = (product: string) => {
-    if (!products.includes(product)) {
+    if (!products.includes(product) && products.length < 10) {
       setProducts([...products, product])
       setSearchQuery('')
     }
@@ -187,7 +172,7 @@ export default function RoutineForm() {
 
             <div className="mb-8">
               <label className="block text-lg font-semibold text-[#2F2F2F] mb-4">
-                제품명을 검색하거나 선택해주세요 (최소 3개)
+                제품명을 검색하거나 선택해주세요 (최소 3개, 최대 10개)
               </label>
               <div className="relative">
                 <input
@@ -199,7 +184,7 @@ export default function RoutineForm() {
                 />
                 {searchQuery && filteredProducts.length > 0 && (
                   <div className="absolute z-10 w-full mt-2 bg-white border-2 border-[#A8E3D1]/30 rounded-2xl shadow-lg max-h-60 overflow-y-auto">
-                    {filteredProducts.slice(0, 10).map((product) => (
+                    {filteredProducts.slice(0, 20).map((product) => (
                       <button
                         key={product}
                         onClick={() => addProduct(product)}
@@ -217,7 +202,7 @@ export default function RoutineForm() {
             {products.length > 0 && (
               <div className="mb-8">
                 <p className="text-sm text-[#5a6c57] mb-3">
-                  선택된 제품 ({products.length}개)
+                  선택된 제품 ({products.length}/10개)
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {products.map((product) => (
@@ -242,11 +227,11 @@ export default function RoutineForm() {
             <div className="mb-8">
               <p className="text-sm text-[#5a6c57] mb-3">인기 제품 빠른 선택</p>
               <div className="flex flex-wrap gap-3">
-                {sampleProducts.slice(0, 6).map((product) => (
+                {sampleProducts.slice(0, 12).map((product) => (
                   <button
                     key={product}
                     onClick={() => addProduct(product)}
-                    disabled={products.includes(product)}
+                    disabled={products.includes(product) || products.length >= 10}
                     className="py-2 px-4 rounded-full text-sm bg-gray-50 text-[#5a6c57] border border-gray-200 hover:border-[#A8E3D1] hover:bg-[#A8E3D1]/10 transition-all disabled:opacity-50"
                   >
                     {product}
@@ -264,7 +249,7 @@ export default function RoutineForm() {
               </button>
               <button
                 onClick={() => setStep(3)}
-                disabled={products.length < 3}
+                disabled={products.length < 3 || products.length > 10}
                 className="flex-1 bg-gradient-to-br from-[#A8E3D1] to-[#84a98c] text-[#2F2F2F] py-4 rounded-2xl font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all"
               >
                 다음 단계 →
