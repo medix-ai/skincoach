@@ -6,8 +6,9 @@ const nextConfig = {
   reactStrictMode: true,
   // output: 'export'는 빌드 시에만 필요하므로 개발 환경에서는 제거
   ...(isProd && { output: 'export' }),
-  basePath: basePath,
-  assetPrefix: basePath,
+  // 개발 환경에서는 basePath와 assetPrefix를 설정하지 않음
+  ...(isProd && { basePath: basePath }),
+  ...(isProd && { assetPrefix: basePath }),
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
